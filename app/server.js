@@ -39,7 +39,7 @@ app.get("/tables", function (req, res) {
 
 // Displays all characters
 app.get("/api/tables", function (req, res) {
-    return res.json(characters);
+    return res.json(tables);
 });
 
 
@@ -63,8 +63,5 @@ app.post("/reserve", function (req, res) {
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on http://localhost:" + PORT);
 });
-
-
-
