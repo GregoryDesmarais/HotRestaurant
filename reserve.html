@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container text-center">
+        <div class="jumbotron">
+            <div class="welcome">
+                <h1>Hot Resturant</h1>
+                <h3>We only have 5 tables! Book your seat before they are all gone!</h3>
+                <hr>
+                <a href="tables" class="btn btn-primary btn-lg"><span class="fa fa-plus"></span> View Tables</button>
+                <a href="/" class="btn btn-lg"><span class="fa fa-home"></span></button></a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3><strong>Table Reservation</strong></h3>
+        </div>
+        <div class='card-body'>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="employee-name-input"> Name</label>
+                    <input class="form-control" id="name-input" placeholder="First Name" type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="role-input">Phone Number</label>
+                    <input class="form-control" id="number-input" placeholder="71899977787" type="text" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="start-input">Email</label>
+                    <input class="form-control" id="email-input" placeholder="email@email.com" type="text" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="rate-input">Unique ID</label>
+                    <input class="form-control" id="id-input" placeholder="200000" type="text" name="id">
+                </div>
+                <button class="btn btn-primary float-right" id="submit-btn">Submit</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="hotel.js"></script>
