@@ -38,7 +38,11 @@ app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// Displays all characters
+app.get("/reserve", function (req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+// Displays all tables
 app.get("/api/tables", function (req, res) {
     return res.json(tables);
 });
@@ -53,10 +57,8 @@ app.post("/reserve", function (req, res) {
 
     if(tables.length > 5)
     {
-        alert("Sorry, you have been placed on the wait list.");
         waitList.push(newReservation);
     }else{
-        alert("Your table has been reserved");
         tables.push(newReservation);
     }
 });

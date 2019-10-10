@@ -7,10 +7,12 @@ $("#submit-btn").on('click',function(event){
     id: $("#id-input").val().trim(),
     };
 
+    // $.get("/api/tables", function(data){
+
+    })
     $.post("/api/makereservation", newReservation)
     .then(function(data){
         console.log("creating reservation", data);
     })
 })
-
 
