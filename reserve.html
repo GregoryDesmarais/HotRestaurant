@@ -6,10 +6,30 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="hotel.js"></script>
+    <script>
+        $("#submit-btn").on('click', function (event) {
+            event.preventDefault();
+            var newReservation = {
+                userName: $("#name-input").val().trim(),
+                phoneNum: $("#number-input").val().trim(),
+                email: $("#email-input").val().trim(),
+                id: $("#id-input").val().trim(),
+            };
+
+            $.post("/reserve", newReservation).then(function (data) {
+                if (data.result === true) {
+                    alert("Your reservation has been added.");
+                } else {
+                    alert("Sorry, you are on the wait list.");
+                }
+            })
+        });
+
+    </script>
 
 
 </head>
+
 <body>
     <div class="container text-center">
         <div class="jumbotron">
@@ -18,7 +38,7 @@
                 <h3>We only have 5 tables! Book your seat before they are all gone!</h3>
                 <hr>
                 <a href="tables" class="btn btn-primary btn-lg"><span class="fa fa-plus"></span> View Tables</button>
-                <a href="/" class="btn btn-lg"><span class="fa fa-home"></span></button></a>
+                    <a href="/" class="btn btn-lg"><span class="fa fa-home"></span></button></a>
             </div>
         </div>
     </div>
@@ -53,4 +73,3 @@
 </body>
 
 </html>
-
