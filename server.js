@@ -2,7 +2,6 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
-var fs = require('fs');
 
 // Sets up the Express App
 // =============================================================
@@ -42,9 +41,13 @@ app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-// Displays all tables
+
 app.get("/api/tables", function (req, res) {
     return res.json(tables);
+});
+
+app.get("/api/waitList", function (req, res) {
+    return res.json(waitList);
 });
 
 
@@ -52,15 +55,20 @@ app.get("/api/tables", function (req, res) {
 app.post("/reserve", function (req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body parsing middleware
+
+
     var info = req.body;
     var newReservation = new Table(info.name, info.phone, info.email, info.id);
 
-    if(tables.length > 5)
+    if(tables.length >= 5)
     {
         waitList.push(newReservation);
+        res.send(200, {result:false});
     }else{
         tables.push(newReservation);
+        res.send(200, {result:true});
     }
+
 });
 
 // Starts the server to begin listening
