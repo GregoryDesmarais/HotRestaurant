@@ -38,12 +38,10 @@ app.get("/tables", function (req, res) {
 });
 
 app.get("/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reserver.html"));
+    res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
-
-
-// Displays all characters
+// Displays all tables
 app.get("/api/tables", function (req, res) {
     return res.json(tables);
 });
