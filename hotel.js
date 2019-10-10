@@ -9,10 +9,10 @@ $("#submit-btn").on('click',function(event){
 
     // $.get("/api/tables", function(data){
 
-    })
+   
     $.post("/api/makereservation", newReservation)
     .then(function(data){
         console.log("creating reservation", data);
     })
-})
 
+})
