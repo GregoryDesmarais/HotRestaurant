@@ -15,6 +15,5 @@ $("#submit-btn").on('click',function(event){
             alert("Sorry, you are on the wait list.");
         }
     })
-})
-
+});
 
